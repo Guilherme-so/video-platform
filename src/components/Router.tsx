@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 import Event from '../pages/event'
+import { Subscribe } from '../pages/subscribe'
 
 function Router() {
   return (
     <Routes>
-      <Route path='/' element={<h1>Index Page</h1>} />
-      <Route path='/class' element={<Event />} />
-      <Route path='/class/lesson/:slug' element={<Event />} />
+      <Route path='/' element={<Subscribe />} />
+      <Route path='/classroom' element={<Event />} />
+      <Route path='/classroom/lesson/:slug' element={<Event />} />
     </Routes>
   )
 }

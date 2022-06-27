@@ -14,7 +14,7 @@ function Event() {
           <Video lessonSlug={slug} />
         ) : (
           <div className='flex-1 flex items-center justify-center'>
-            <h1></h1>
+            <h1>Welcome...</h1>
           </div>
         )}
         <Sidebar />
