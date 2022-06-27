@@ -14,16 +14,20 @@ interface videoProps {
 }
 
 function Video(props: videoProps) {
-  const { data } = useGetLessonBySlugQuery({
+  const { data } = useGetLessonBySlugQuery(
+      {
     variables: {
       slug: props.lessonSlug,
     },
-  })
+  }
+  )
+
+
 
   if (!data || !data.lesson) {
     return (
       <div className='flex-1 flex items-center justify-center'>
-        <p>Loading...</p>
+       <div className="loading" />
       </div>
     )
   }
