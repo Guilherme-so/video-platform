@@ -1,6 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Event from '../pages/event'
 import { Subscribe } from '../pages/subscribe'
+import { initializeApp } from 'firebase/app'
+import { config } from '../config/config'
+
+initializeApp(config.firebaseConfig)
 
 function Router() {
   return (

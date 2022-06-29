@@ -9,12 +9,12 @@ function Event() {
   return (
     <div className='flex flex-col min-h-screen'>
       <Header />
-      <main className='flex flex-1'>
+      <main className='flex-1 md:flex'>
         {slug ? (
           <Video lessonSlug={slug} />
         ) : (
-          <div className='flex-1 flex items-center justify-center'>
-            <h1>Welcome...</h1>
+          <div className='flex-1 flex text-xl text-gray-400 items-center justify-center'>
+            <h1>Click on a lesson to start.</h1>
           </div>
         )}
         <Sidebar />

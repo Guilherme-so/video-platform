@@ -1,13 +1,12 @@
 import { useGetLessonsQuery } from '../graphql/generated'
 import Lesson from './lesson'
 
-
 function Sidebar() {
-  const {data} = useGetLessonsQuery()
-  
+  const { data } = useGetLessonsQuery()
+
   return (
-    <aside className='w-[348px] bg-gray-700 p-6 border-l border-gray-600'>
-      <span className='font-bold text-2xl pb-6 mb-4 mb-b border-b border-blue-600 block'>
+    <aside className='sm:max-w-[90%] mx-auto  bg-gray-700 p-6 border-l border-gray-600 md:w-[348px]'>
+      <span className='font-bold text-2xl pb-6 mb-4 flex mx-auto items-center justify-center border-b border-gray-500'>
         Cronograma de aulas
       </span>
 

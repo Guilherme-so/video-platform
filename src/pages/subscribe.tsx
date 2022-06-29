@@ -1,11 +1,40 @@
 import { useState, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Mockup from '../public/images/code-mockup.png'
 import { useCreateSubscriberMutation } from '../graphql/generated'
+import { GithubLogo, GoogleLogo } from 'phosphor-react'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { toast } from 'react-toastify'
 
 export function Subscribe() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const navigate = useNavigate()
+  const auth = getAuth()
+  const [authing, setAuthing] = useState(false)
+
+  const singInWithGoogle = async () => {
+    setAuthing(true)
+    signInWithPopup(auth, new GoogleAuthProvider())
+      .then((res) => {
+        console.log(res.user)
+        toast.success(`Bem vindo ${res.user.displayName}.`, {
+          position: 'top-left',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+        navigate('/classroom')
+      })
+      .catch((error) => {
+        console.log(error)
+        toast.error('Opps, Something went wrong')
+        setAuthing(false)
+      })
+  }
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation()
 
@@ -17,21 +46,29 @@ export function Subscribe() {
         email,
       },
     })
-
+    toast.success(`Bem vindo ${name}.`, {
+      position: 'top-left',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
     navigate('/classroom')
   }
 
   return (
     <div className='min-h-screen bg-blurGreen bg-cover bg-no-repeat flex flex-col items-center'>
-      <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto'>
-        <div className='max-w-[660px]'>
+      <div className='w-full-scren mx-auto md:flex items-center justify-between  md:mt-20 md:w-full max-w-[1100px] md:p-4'>
+        <div className='max-w-[90%] mx-auto mt-4 lg:max-w-[660px] p-4'>
           <h1 className='text-[2.5rem] leading-tight text-purple-500'>Logo</h1>
-          <h1 className=' mt-8 text-[2.5rem] leading-tight'>
+          <h1 className=' mt-4 md:mt-8 text-[2.5rem] leading-tight'>
             Construa uma
             <strong className='text-purple-500'> aplicação completa</strong>, do
             zero, com <strong className='text-purple-500'>react</strong>
           </h1>
-          <p className='mt-4 text-gray-200 leading-relaxed'>
+          <p className='mt-4 text-gray-200 leading-base  text-xl text-justify text-distribute tracking-tight indent-4'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
             mollitia voluptatem provident ipsam dolorem voluptates cum pariatur
             beatae nulla facilis nisi dolore accusantium sit quia ipsum dicta,
@@ -39,7 +76,7 @@ export function Subscribe() {
           </p>
         </div>
 
-        <div className='p-8 bg-gray-700 border border-gray-500 rounded'>
+        <div className='max-w-[80%] mx-auto mt-6 p-8 bg-gray-700 border border-gray-500 rounded'>
           <strong className='text-2xl mb-6 block'>
             Escreva-se gratuitamente
           </strong>
@@ -63,14 +100,29 @@ export function Subscribe() {
             <button
               disabled={loading}
               type='submit'
-              className='mt-4 py-4  rounded uppercase bg-purple-500 hover:bg-purple-700 transitio-colors disabled:opacity-50'
+              className='mt-4 py-4 font-bold rounded uppercase bg-purple-500 hover:bg-purple-700 transitio-colors disabled:opacity-50'
             >
               Cadastrar
             </button>
+
+            <button
+              onClick={() => singInWithGoogle()}
+              disabled={authing}
+              className='mt-4 py-4 font-bold rounded uppercase bg-red-600 flex gap-4 items-center justify-center hover:bg-red-700'
+            >
+              <GoogleLogo size={24} />
+              Login with Google
+            </button>
+
+            {/* <button className='mt-4 py-4 font-bold rounded uppercase bg-black flex gap-4 items-center justify-center hover:bg-white hover:text-black'>
+              <GithubLogo size={24} />
+              Login with Github
+            </button> */}
           </form>
         </div>
       </div>
-      <img src='/src/assets/code-mockup.png' className='mt-10' alt='mockup' />
+
+      <img src={Mockup} className='mt-10' alt='mockup' />
     </div>
   )
 }
