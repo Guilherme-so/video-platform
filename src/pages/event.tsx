@@ -14,7 +14,7 @@ function Event() {
           <Video lessonSlug={slug} />
         ) : (
           <div className='flex-1 flex text-xl text-gray-400 items-center justify-center'>
-            <h1>Click on a lesson to start.</h1>
+            <h1>Click on a video to start.</h1>
           </div>
         )}
         <Sidebar />
