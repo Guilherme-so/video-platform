@@ -18,7 +18,7 @@ export function Subscribe() {
     signInWithPopup(auth, new GoogleAuthProvider())
       .then((res) => {
         console.log(res.user);
-        toast.success(`Bem vindo ${res.user.displayName}.`, {
+        toast.success(`Welcome ${res.user.displayName}.`, {
           position: "top-left",
           autoClose: 5000,
           hideProgressBar: false,
@@ -46,7 +46,7 @@ export function Subscribe() {
         email,
       },
     });
-    toast.success(`Bem vindo ${name}.`, {
+    toast.success(`Welcome ${name}.`, {
       position: "top-left",
       autoClose: 5000,
       hideProgressBar: false,
