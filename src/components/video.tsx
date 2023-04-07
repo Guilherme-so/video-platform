@@ -1,6 +1,6 @@
 import { Player, Youtube, DefaultUi } from '@vime/react'
 import '@vime/core/themes/default.css'
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 
 import {
   DiscordLogo,
@@ -69,23 +69,24 @@ function Video(props: videoProps) {
 
           <div className='max-w-[80%] flex gap-2 mx-auto mt-6 md:flex md:flex-col md:gap-4'>
             <a
-              href=''
+              href='https://discord.gg/Xm25tzzf' 
+              rel="noreferrer" target='_blank'
               className='p-2 md:p-4 text-sm bg-purple-500 flex items-center rouded font-bold uppercase gap-2 justify-center hover:bg-purple-700 transition-colors'
             >
               <DiscordLogo size={24} />
-              Comunidade do Discord
+              Discord
             </a>
             <a
               href=''
               className='p-2 md:p-4  text-sm border border-purple-500  flex items-center rouded font-bold uppercase gap-2 justify-center  hover:bg-purple-700 hover:text-color-gray-900 transition-colors'
             >
               <Lightning size={24} />
-              Acesse O Desafio
+              {/* Acesse O Desafio */}
+              Soon
             </a>
           </div>
         </div>
-
-        <div className='mt-8 gap-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:mt-10'>
+        {/* <div className='mt-8 gap-2 lg:grid lg:grid-cols-2 lg:gap-6 lg:mt-10'>
           <a
             href=''
             className='flex items-center justify-center mb-6 bg-gray-700 rounded overflow-hidden max-w-[400px] mx-auto  md:items-stretch gap-6 hover:bg-gray-600 transition-colors'
@@ -103,7 +104,7 @@ function Video(props: videoProps) {
               <CaretRight size={24} />
             </div>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   )
