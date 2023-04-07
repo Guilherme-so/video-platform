@@ -28,7 +28,7 @@ function Lesson(props: lessonsProps) {
   const isActiveLesson = props.slug === slug
 
   return (
-    <Link to={`/classroom/lesson/${props.slug}`} className='group'>
+    <Link to={`/watch/video/${props.slug}`} className='group'>
       <span className='text-gray-300'>{formatedDate}</span>
 
       <div
@@ -50,12 +50,12 @@ function Lesson(props: lessonsProps) {
               )}
             >
               <CheckCircle size={20} />
-              Conteudo Liberado
+              Content available
             </span>
           ) : (
             <span className=' flex gap-2 items-center text-sm text-orange-500 font-medium'>
               <CheckCircle size={20} />
-              Em Breve
+              Soon
             </span>
           )}
 
@@ -67,7 +67,9 @@ function Lesson(props: lessonsProps) {
               }
             )}
           >
-            {props.type === 'live' ? 'AO VIVO' : 'AULA PRATICA'}
+            {/* {props.type === 'live' ? 'AO VIVO' : 'AULA PRATICA'} */}
+            {props.type === 'live' ? 'LIVE' : 'AVAILABLE'}
+
           </span>
         </header>
 
