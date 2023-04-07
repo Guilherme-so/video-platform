@@ -10,8 +10,8 @@ function Router() {
   return (
     <Routes>
       <Route path='/' element={<Subscribe />} />
-      <Route path='/classroom' element={<Event />} />
-      <Route path='/classroom/lesson/:slug' element={<Event />} />
+      <Route path='/watch' element={<Event />} />
+      <Route path='/watch/video/:slug' element={<Event />} />
     </Routes>
   )
 }
