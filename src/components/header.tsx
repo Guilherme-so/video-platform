@@ -20,7 +20,7 @@ function Header() {
           draggable: true,
           progress: undefined,
         })
-        navigate('/watch')
+        navigate('/')
       })
       .catch((error) => {
         console.log(error)
@@ -28,7 +28,7 @@ function Header() {
   }
   return (
     <header className='w-full py-5 px-8 flex items-center justify-between bg-gray-700 border-b border-gray-600'>
-      <a href='/watch' className='text-2xl text-purple-600'>
+      <a href='/' className='text-2xl text-purple-600'>
         <h1>Gui</h1>
       </a>
 
