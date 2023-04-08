@@ -9,7 +9,7 @@ initializeApp(config.firebaseConfig)
 function Router() {
   return (
     <Routes>
-      <Route path='/' element={<Subscribe />} />
+      {/* <Route path='/' element={<Subscribe />} /> */}
       <Route path='/watch' element={<Event />} />
       <Route path='/watch/video/:slug' element={<Event />} />
     </Routes>

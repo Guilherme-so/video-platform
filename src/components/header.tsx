@@ -20,7 +20,7 @@ function Header() {
           draggable: true,
           progress: undefined,
         })
-        navigate('/')
+        navigate('/watch')
       })
       .catch((error) => {
         console.log(error)
@@ -28,17 +28,17 @@ function Header() {
   }
   return (
     <header className='w-full py-5 px-8 flex items-center justify-between bg-gray-700 border-b border-gray-600'>
-      <a href='/' className='text-2xl text-purple-400'>
-      <img src="/src/public/images/gui_logo.jpg" alt="" height={50} width={80} />
+      <a href='/watch' className='text-2xl text-purple-600'>
+        <h1>Gui</h1>
       </a>
 
-      <button
+      {/* <button
         onClick={signOutFunc}
         className='p-3 rounded flex items-center justify-between gap-2 bg-purple-500 hover:bg-purple-700 '
       >
         <ArrowFatLinesLeft size={24} />
         Log Out
-      </button>
+      </button> */}
     </header>
   )
 }
