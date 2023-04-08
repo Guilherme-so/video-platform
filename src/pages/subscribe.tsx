@@ -63,11 +63,11 @@ export function Subscribe() {
         
         <div className="w-full-scren mx-auto md:flex items-center justify-between  md:mt-20 md:w-full max-w-[1100px] md:p-4">
           <div className="max-w-[90%] mx-auto mt-4 lg:max-w-[660px] p-4">
+            <img src="/src/public/images/gui_logo.jpg" alt="" height={60} width={80} />
             <h1 className="text-[2.5rem] leading-tight text-purple-500">
-              ARGO
             </h1>
             <h1 className=" mt-4 md:mt-8 text-[2.5rem] leading-tight">
-              Welcome to <strong className="text-purple-500">ARGO </strong>a
+              Welcome to a
               place where
               <strong className="text-purple-500">
                 {" "}
@@ -130,7 +130,7 @@ export function Subscribe() {
           </div>
         </div>
 
-        <img src={Mockup} className="mt-10" alt="mockup" />
+        {/* <img src={Mockup} className="mt-10" alt="mockup" /> */}
       </div>
   );
 }

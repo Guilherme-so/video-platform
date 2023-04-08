@@ -29,7 +29,7 @@ function Header() {
   return (
     <header className='w-full py-5 px-8 flex items-center justify-between bg-gray-700 border-b border-gray-600'>
       <a href='/' className='text-2xl text-purple-400'>
-        ARGO
+      <img src="/src/public/images/gui_logo.jpg" alt="" height={50} width={80} />
       </a>
 
       <button
